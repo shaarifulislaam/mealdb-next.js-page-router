@@ -1,0 +1,17 @@
+.request-user-section {
+  padding-block-start: 150px;
+  padding-block-end: 200px;
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 20px #000000;
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      border: 1px solid #000000;
+    }
+  }
+}

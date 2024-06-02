@@ -1,0 +1,61 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.without-focus {
+  &:focus,
+  &:active,
+  &:focus-visible {
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.img-container {
+  width: 100%;
+  img {
+    max-width: 100%;
+  }
+}
+
+.login-modal {
+  .modal-body {
+    margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    .btn {
+      border: 1px solid #000000;
+      border-radius: 50px;
+    }
+  }
+}
+
+.dropdown {
+  .dropdown-toggle {
+    background: #9bb1df;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 0;
+    .profile-img {
+      border-radius: 50px;
+    }
+    &:active {
+      background: #9bb1df;
+    }
+  }
+}

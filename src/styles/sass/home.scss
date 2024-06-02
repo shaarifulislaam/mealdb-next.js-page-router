@@ -1,0 +1,33 @@
+.categories-section {
+  padding-block-start: 50px;
+  padding-block-end: 100px;
+  .content-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+    .list {
+      list-style-type: none;
+      padding-left: 0;
+      .list-item {
+        background: #bcbfe4;
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: 10px;
+        width: 100%;
+      }
+    }
+    .content {
+      .meals-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 12px;
+        .category-container {
+          border-radius: 5px;
+          border: 1px solid #e2dfdf;
+          padding: 22px 30px;
+        }
+      }
+    }
+  }
+}

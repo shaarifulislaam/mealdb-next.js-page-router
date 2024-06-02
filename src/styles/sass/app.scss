@@ -1,0 +1,18 @@
+@import "variable.scss";
+//Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+//site
+@import "./site.scss";
+
+//meals
+@import "./meals.scss";
+
+// home
+@import "./home.scss";
+
+//meal details
+@import "./meal-details.scss";
+
+//redirect user
+@import "./redirect-user.scss";

@@ -1,0 +1,14 @@
+.meals-container{
+    padding-block-start: 50px;
+    padding-block-end: 100px;
+    .meals-content{
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+        gap: 12px;
+        .category-container{
+            border-radius: 5px;
+            border: 1px solid #e2dfdf;
+            padding: 22px 30px;
+        }
+    }
+}

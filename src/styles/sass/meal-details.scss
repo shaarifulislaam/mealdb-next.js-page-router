@@ -1,0 +1,13 @@
+.meal-details-section{
+    padding-block-start: 50px;
+    padding-block-end: 100px;
+    .img-container{
+        img{
+            max-width: 500px;
+            // height: 300px;
+            // aspect-ratio: contain;
+            object-fit: contain;
+            
+        }
+    }
+}
