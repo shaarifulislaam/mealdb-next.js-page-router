@@ -59,7 +59,7 @@ const HomePage = ({ categories, mealsData }) => {
       <Button
         variant="primary"
         onClick={toggleShow}
-        className="btn btn-secondary "
+        className="btn btn-canvas "
       >
         <svg
           id="Layer_1"

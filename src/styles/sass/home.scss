@@ -1,4 +1,4 @@
-.btn {
+.btn-canvas {
   display: none;
 }
 .categories-section {
@@ -24,7 +24,7 @@
 }
 
 @media (max-width: 767px) {
-  .btn {
+  .btn-canvas {
     display: flex;
     background: white;
     margin-top: 15px;
