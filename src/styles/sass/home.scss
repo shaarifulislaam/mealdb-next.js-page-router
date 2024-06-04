@@ -1,3 +1,6 @@
+.btn {
+  display: none;
+}
 .categories-section {
   padding-block-start: 50px;
   padding-block-end: 100px;
@@ -15,6 +18,23 @@
 
         margin-bottom: 10px;
         width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .btn {
+    display: flex;
+    background: white;
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+  .categories-section {
+    .content-container {
+      display: block;
+      .list {
+        display: none;
       }
     }
   }

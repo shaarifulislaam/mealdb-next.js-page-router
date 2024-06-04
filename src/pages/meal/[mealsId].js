@@ -3,14 +3,13 @@ import Link from "next/link";
 import RedirectUser from "../redirect-user";
 
 export const getServerSideProps = async (context) => {
-  
   const { mealsId } = context.params;
   const res = await fetch(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealsId}`
   );
   const data = await res.json();
   const result = data.meals[0];
-//   console.log(result);
+  //   console.log(result);
   return {
     props: {
       meal: result,
@@ -18,31 +17,29 @@ export const getServerSideProps = async (context) => {
   };
 };
 
-
 // export async function getStaticPaths() {
-  
+
 //   const res = await fetch(
 //     "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
 //   );
 //   const data = await res.json();
 // const result = data.meals;
 // console.log(result);
-  
+
 //   const paths = result.map((dt) =>
 //    {
 //      params: {
 //        id: Number(dt.idMeal);
 //      }
 //    }
-   
+
 //   );
 
-  
 //   return { paths, fallback: false };
 // }
 
 // export async function getStaticProps({ params }) {
- 
+
 //   const res = await fetch(
 //     `https://www.themealdb.com/api/json/v1/1/random.php/${params.id}`
 //   );
@@ -51,18 +48,17 @@ export const getServerSideProps = async (context) => {
 //   return { props: { meal } }
 // }
 
-
-const Meal = ({meal}) => {
-//   console.log(meal);
+const Meal = ({ meal }) => {
+  //   console.log(meal);
   const { idMeal, strMeal, strCategory, strMealThumb, strInstructions } = meal;
 
   return (
     <section className="meal-details-section">
       <div className="container">
-        <Link href="/">
+        {/* <Link href="/">
           <button className="btn p-0">Back</button>
-        </Link>
-        <h1>{meal.strMeal}</h1>
+        </Link> */}
+
         <div className="img-container">
           <Image
             className="str-img"
@@ -74,9 +70,11 @@ const Meal = ({meal}) => {
             alt="str imge"
           />
         </div>
-        <p>{strInstructions}</p>
+        <div className="text-content">
+          <h1 className="item-name">{strMeal}</h1>
+          <p className="instructions">{strInstructions}</p>
+        </div>
       </div>
-     
     </section>
   );
 };

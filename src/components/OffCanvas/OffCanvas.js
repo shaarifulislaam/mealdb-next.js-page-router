@@ -1,16 +1,33 @@
 import React from "react";
 import { Offcanvas } from "react-bootstrap";
+import CategoryList from "../CategoryList/CategoryList";
 
-const OffCanvas = ({ show, handleClose }) => {
+const OffCanvas = ({
+  categoryTab,
+  categoryList,
+  categories,
+  setCategoryTab,
+  show,
+  handleClose,
+}) => {
   return (
     <>
-      <Offcanvas show={show} scroll={true} onHide={handleClose}>
+      <Offcanvas
+        className="off-Canvas-container"
+        show={show}
+        scroll={true}
+        onHide={handleClose}
+      >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title>Select Category</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+          <CategoryList
+            categoryList={categoryList}
+            categoryTab={categoryTab}
+            categories={categories}
+            setCategoryTab={setCategoryTab}
+          />
         </Offcanvas.Body>
       </Offcanvas>
     </>

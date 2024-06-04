@@ -59,3 +59,20 @@ a {
     }
   }
 }
+
+.off-Canvas-container {
+  width: 100%;
+  .category-list-container {
+    .list {
+      padding-left: 0;
+      .list-item {
+        background: #bcbfe4;
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: 10px;
+        width: 80%;
+      }
+    }
+  }
+}
