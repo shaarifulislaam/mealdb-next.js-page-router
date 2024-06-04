@@ -1,15 +1,14 @@
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/logo-small.png";
 import { useState } from "react";
 import LoginModal from "../LoginModal/LoginModal";
 import { useRouter } from "next/router";
-import { Dropdown, DropdownButton } from "react-bootstrap";
 
 const Navbar = () => {
   const { data: session } = useSession();
-  // console.log(session);
+
   const router = useRouter();
 
   const [show, setShow] = useState(false);
@@ -41,7 +40,7 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav m-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link className="nav-link active" href="/">
                 Home
@@ -54,25 +53,7 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="d-flex align-items-center gap-3">
-            {/* {session && (
-              <Image
-                src={session?.user?.image}
-                width={30}
-                height={30}
-                alt="logo"
-              />
-            )} */}
-            {/* {session && session?.user?.name} */}
             {session ? (
-              // <button
-              // onClick={() => {
-              //   signOut({ callbackUrl: "/" });
-
-              // }}
-              //   className="btn btn-outline-success"
-              // >
-              //   Logout
-              // </button>
               <div className="dropdown">
                 <button
                   className="btn btn-secondary dropdown-toggle"

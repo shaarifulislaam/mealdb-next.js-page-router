@@ -1,14 +1,35 @@
-.meals-container{
-    padding-block-start: 50px;
-    padding-block-end: 100px;
-    .meals-content{
-        display: grid;
-        grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
-        gap: 12px;
-        .category-container{
-            border-radius: 5px;
-            border: 1px solid #e2dfdf;
-            padding: 22px 30px;
+.content {
+  .meals-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 12px;
+    .meal-block {
+      border-radius: 10px;
+
+      border: 1px solid #e2dfdf;
+      padding: 22px 30px;
+      .img-container {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 10px;
         }
+      }
+      .text-content {
+        padding-top: 20px;
+        .meal-name {
+          font-size: 20px;
+          color: rgb(75, 71, 71);
+        }
+        .meal-desc {
+          font-size: 16px;
+          margin-top: 12px;
+          color: #242020;
+          text-align: justify;
+        }
+      }
     }
+  }
 }

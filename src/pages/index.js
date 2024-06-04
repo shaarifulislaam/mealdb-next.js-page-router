@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 import MealsCard from "@/components/MealsCard.js/MealsCard";
-import CategoryCard from "@/components/CategoryCard/CategoryCard";
+
 import ScrollToTop from "react-scroll-to-top";
+import { Button } from "react-bootstrap";
+import OffCanvas from "@/components/OffCanvas/OffCanvas";
 
 export const getStaticProps = async () => {
   const res = await fetch(
@@ -49,9 +51,16 @@ const HomePage = ({ categories, mealsData }) => {
       fetchCategory();
     }
   }, [categoryTab]);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const toggleShow = () => setShow((s) => !s);
 
   return (
     <>
+      <Button variant="primary" onClick={toggleShow} className="me-2 d-none">
+        OffCanvas
+      </Button>
       <section className="categories-section">
         <div className="container">
           <h4>Categories</h4>
@@ -78,10 +87,10 @@ const HomePage = ({ categories, mealsData }) => {
             <div className="content">
               {categoryTab == "All" && (
                 <div className="meals-content">
-                  {mealsData?.map((category) => (
+                  {mealsData?.map((meal) => (
                     <MealsCard
-                      key={category?.idMeal}
-                      category={category}
+                      key={meal?.idMeal}
+                      meal={meal}
                       categoryTab={categoryTab}
                     ></MealsCard>
                   ))}
@@ -95,11 +104,11 @@ const HomePage = ({ categories, mealsData }) => {
                 ) : (
                   <>
                     {meals?.map((meal) => (
-                      <CategoryCard
-                        key={meal.idMeal}
+                      <MealsCard
+                        key={meal?.idMeal}
                         meal={meal}
                         categoryTab={categoryTab}
-                      ></CategoryCard>
+                      ></MealsCard>
                     ))}
                   </>
                 )}
@@ -109,6 +118,7 @@ const HomePage = ({ categories, mealsData }) => {
         </div>
       </section>
       <ScrollToTop color="#6f00ff" />
+      <OffCanvas show={show} handleClose={handleClose} />
     </>
   );
 };
